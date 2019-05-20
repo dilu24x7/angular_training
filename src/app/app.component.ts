@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+// app.component.ts
+// whats this class meant for module/component
+import { Component } from "@angular/core"
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+	selector: "app-root",
+	template: "<app-header></app-header><router-outlet></router-outlet>"
 })
 export class AppComponent {
-  title = 'angularproject';
+	constructor() {
+		console.log("App Component");
+	}
 }

@@ -1,0 +1,3 @@
+doubts.txt
+// property-binding y html inside variable?
+// instance variable y no let?
