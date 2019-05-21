@@ -1,5 +1,5 @@
 // mysign.component.ts
-import { Component, Input, EventEmitter, Output } from "@angular/core"
+import { Component, Input, EventEmitter, Output, OnChanges, OnDestroy, OnInit } from "@angular/core"
 
 @Component({
 	selector: "my-sign",

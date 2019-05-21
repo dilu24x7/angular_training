@@ -40,3 +40,28 @@ ngOnDestroy
 
 data is local to the component
 
+cli commands
+
+--flat no new folder
+--skip-tests no spec file
+-s no css file
+-t no html file
+-m (default registers in root module) specify the module to be registered on to.
+eg:
+ng g c shopping/products --flat --skip-tests -m=shopping -s
+
+
+when data needs to be shared with sibling components
+angular supports only constructor dependency injection (not any other)
+re-usable components go only with input/output
+
+
+UI - side 
+
+UI logic Components 
+NON-UI logic Services (NON UI BusinessLogic, NON UI DataLogic _interacts with REST WEB SERVICE)
+
+SERVICES:
+decorarte with @injectable() decorator
+register in module using "providers" (done in root module as its singleton objects)
+use the service as injectable parameter in constructor

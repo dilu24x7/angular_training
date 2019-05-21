@@ -10,6 +10,8 @@ import { ListComponent, HomeComponent, NotFoundComponent } from "./menulinks.com
 import { SignInComponent } from "./login/signin.component"
 import { Routes, RouterModule } from "@angular/router"
 import { FormsModule} from "@angular/forms"
+import { ProductService } from "./shared/services/product.service"
+import { CartService } from "./shared/services/cart.service"
 
 let appRoutes:Routes = [{path:"home", component:HomeComponent},
 	{path:"home", component:HomeComponent},
@@ -25,7 +27,9 @@ let appRoutes:Routes = [{path:"home", component:HomeComponent},
 	// Startup Component
 	bootstrap: [AppComponent],
 	// Module dependencies
-	imports: [BrowserModule, LoginModule, ShoppingModule, RouterModule.forRoot(appRoutes), FormsModule]
+	imports: [BrowserModule, LoginModule, ShoppingModule, RouterModule.forRoot(appRoutes), FormsModule],
+	// Register Services
+	providers: [ProductService, CartService]
 })
 export class AppModule {
 	constructor() {
