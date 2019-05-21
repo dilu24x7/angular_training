@@ -1,3 +1,42 @@
 doubts.txt
 // property-binding y html inside variable?
 // instance variable y no let?
+
+
+
+
+
+<app-root>
+<app-header>
+<router-outlet>
+<sign-in>
+<my-sign>
+
+
+communication btwn components
+output - child to parent
+event-binding ()
+
+input - parent to child
+property binding []
+
+
+component life cycle
+1. when tag(component) is used, initialized and rendered.
+2. 
+
+
+
+constructor
+ngOnChanges
+ngOnInit
+ngDoCheck
+  ngAfterContentInit
+  ngAfterContentChecked
+  ngAfterViewInit
+  ngAfter
+ngOnDestroy
+
+
+data is local to the component
+

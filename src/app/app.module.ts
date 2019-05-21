@@ -4,14 +4,17 @@ import { AppComponent } from './app.component'
 import { AppHeaderComponent } from './app-header.component'
 import { BrowserModule } from "@angular/platform-browser"
 import { LoginModule } from "./login/login.module"
+import { SharedModule } from "./shared/shared.module"
 import { ShoppingModule } from "./shopping/shopping.module"
 import { ListComponent, HomeComponent, NotFoundComponent } from "./menulinks.components"
+import { SignInComponent } from "./login/signin.component"
 import { Routes, RouterModule } from "@angular/router"
 import { FormsModule} from "@angular/forms"
 
 let appRoutes:Routes = [{path:"home", component:HomeComponent},
 	{path:"home", component:HomeComponent},
 	{path:"list", component:ListComponent},
+	{path:"sign-in", component:SignInComponent},
 	{path:"", redirectTo: "home", pathMatch:"full"},
 	{path:"**", component:NotFoundComponent}
 ]

@@ -17,7 +17,7 @@ export class HomeComponent {
 
 @Component({
 	selector: "app-list",
-	template: `Shopping List`
+	templateUrl: "./list.component.html"
 })
 export class ListComponent {
 	
