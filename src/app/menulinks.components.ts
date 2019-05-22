@@ -1,5 +1,7 @@
 // menulinks.components.ts
 import { Component } from "@angular/core"
+import { CategoryService } from "./shared/services/category.service"
+import { Category } from "./models/category.model"
 
 @Component({
 	selector: "app-home",
@@ -20,7 +22,11 @@ export class HomeComponent {
 	templateUrl: "./list.component.html"
 })
 export class ListComponent {
-	
+	categoryLinks:Category[] = []
+	constructor(private categoryservice: CategoryService){}
+	ngOnInit() {
+		this.categoryservice.getCategories().subscribe((data) => this.categoryLinks=data, (err) => console.log("Error", err))
+	}
 }
 
 @Component({

@@ -1,7 +1,18 @@
 <!-- list.component.html -->
 <div class="row">
+	<div class="card-header bg-info">
+		<b>Categories</b>
+	</div>
+	<div class="card-body">
+		<ul class="list-group">
+			<li class="list-group-item" *ngFor="let item of categoryLinks">
+				<a [routerLink]="item.id">{{ item.name }}</a>
+			</li>
+		</ul>
+	</div>
 	<div class="col-sm-7">
-		<app-products></app-products>
+		<!-- <app-products></app-products> -->
+		<router-outlet></router-outlet>
 	</div>
 	<div class="col-sm-5 card">
 		<app-cartitems></app-cartitems>

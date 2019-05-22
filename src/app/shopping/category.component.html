@@ -1,0 +1,14 @@
+<!-- category.component.html -->
+
+<h2> Manage Categories </h2>
+<form>
+	<input name="categoryID" [(ngModel)]="fromCategory.id" placeholder="Category ID" readonly>
+	<input name="categoryName" [(ngModel)]="fromCategory.name" placeholder="Category Name">
+	<button type="button" class="btn btn-primary" (click)="save()">Save</button>
+</form>
+
+<ul *ngFor="let item of categories">
+	<li>{{ item.id }}</li>
+	<li>{{ item.name }}</li>
+	<li><button class="btn btn-danger" (click)="delete(item.id)">Delete</button><button class="btn btn-success" (click)=edit(item)>Edit</button></li>
+</ul>

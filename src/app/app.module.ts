@@ -8,6 +8,7 @@ import { SharedModule } from "./shared/shared.module"
 import { ShoppingModule } from "./shopping/shopping.module"
 import { ListComponent, HomeComponent, NotFoundComponent } from "./menulinks.components"
 import { SignInComponent } from "./login/signin.component"
+import { ProductsComponent } from "./shopping/products.component"
 import { Routes, RouterModule } from "@angular/router"
 import { FormsModule} from "@angular/forms"
 import { ProductService } from "./shared/services/product.service"
@@ -15,7 +16,10 @@ import { CartService } from "./shared/services/cart.service"
 
 let appRoutes:Routes = [{path:"home", component:HomeComponent},
 	{path:"home", component:HomeComponent},
-	{path:"list", component:ListComponent},
+	{path:"list", component:ListComponent, children: [
+		{path:"", component: ProductsComponent},
+		{path:":categoryID", component: ProductsComponent}
+	]},
 	{path:"sign-in", component:SignInComponent},
 	{path:"", redirectTo: "home", pathMatch:"full"},
 	{path:"**", component:NotFoundComponent}

@@ -16,6 +16,6 @@ export class Product {
 
 	// define and initialize in single place
 
-	constructor(public id:number, public name:string, public price:number, public description:string){}
+	constructor(public id:number, public name:string, public price:number, public description:string, public categoryID:number){}
 	
 }

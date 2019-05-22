@@ -65,3 +65,16 @@ SERVICES:
 decorarte with @injectable() decorator
 register in module using "providers" (done in root module as its singleton objects)
 use the service as injectable parameter in constructor
+
+
+
+json-server, lowDB
+
+
+
+
+nested routes
+
+app component -> list component -> products component
+
+ActivatedRoute params queryparams

@@ -5,10 +5,12 @@ import { CartitemsComponent } from './cartitems.component';
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { SharedModule } from "../shared/shared.module"
+import { RouterModule } from "@angular/router"
+import { CategoryComponent } from "../shopping/category.component"
 
-@NgModule({  declarations: [ProductsComponent, CartitemsComponent],
+@NgModule({  declarations: [ProductsComponent, CartitemsComponent, CategoryComponent],
 	exports: [ProductsComponent, CartitemsComponent],
-	imports: [CommonModule, FormsModule, SharedModule] //ngFor
+	imports: [CommonModule, FormsModule, SharedModule, RouterModule.forChild([{path:"categories", component:CategoryComponent}])] //ngFor
 })
 export class ShoppingModule {
 	constructor() {
