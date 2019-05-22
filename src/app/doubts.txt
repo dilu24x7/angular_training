@@ -78,3 +78,25 @@ nested routes
 app component -> list component -> products component
 
 ActivatedRoute params queryparams
+
+
+
+module loading
+ load all dependencies
+
+1. Eager loading
+2. Lazy loading
+ - loadChildren
+
+
+ Navigation Strategy
+ - path based
+ - hash based
+ {useHash: true} // load faster no redirection to server
+
+ Router Guards
+
+
+ Deployment
+ ng build
+ ng build --prod

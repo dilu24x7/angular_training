@@ -5,17 +5,20 @@
 		<li class="nav-item">
 			<a routerLinkActive="active" routerLink="/home" class="nav-link">Home</a>
 		</li>
-		<li class="nav-item">
-			<a routerLinkActive="active" routerLink="/signin" class="nav-link">Sign In</a>
+		<li class="nav-item" *ngIf="!isAdminLoggedIn()">
+			<a routerLinkActive="active" routerLink="login/signin" class="nav-link">Sign In</a>
 		</li>
-		<li class="nav-item">
-			<a routerLinkActive="active" routerLink="/signup" class="nav-link">Sign Up</a>
+		<li class="nav-item" *ngIf="!isAdminLoggedIn()">
+			<a routerLinkActive="active" routerLink="login/signup" class="nav-link">Sign Up</a>
 		</li>
 		<li class="nav-item">
 			<a routerLinkActive="active" routerLink="/list" class="nav-link">Shopping-List</a>
 		</li>
-		<li class="nav-item">
+		<li class="nav-item" *ngIf="isAdminLoggedIn()">
 			<a routerLinkActive="active" routerLink="/categories" class="nav-link">Categories</a>
+		</li>
+		<li class="nav-item" *ngIf="isAdminLoggedIn()">
+			<a routerLinkActive="active" routerLink="login/signout" class="nav-link">Sign Out</a>
 		</li>
 	</ul>
 </nav>

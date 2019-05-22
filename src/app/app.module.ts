@@ -7,7 +7,6 @@ import { LoginModule } from "./login/login.module"
 import { SharedModule } from "./shared/shared.module"
 import { ShoppingModule } from "./shopping/shopping.module"
 import { ListComponent, HomeComponent, NotFoundComponent } from "./menulinks.components"
-import { SignInComponent } from "./login/signin.component"
 import { ProductsComponent } from "./shopping/products.component"
 import { Routes, RouterModule } from "@angular/router"
 import { FormsModule} from "@angular/forms"
@@ -20,7 +19,7 @@ let appRoutes:Routes = [{path:"home", component:HomeComponent},
 		{path:"", component: ProductsComponent},
 		{path:":categoryID", component: ProductsComponent}
 	]},
-	{path:"sign-in", component:SignInComponent},
+	{path:"login", loadChildren: "./login/login.module#LoginModule"}, //lazy loading
 	{path:"", redirectTo: "home", pathMatch:"full"},
 	{path:"**", component:NotFoundComponent}
 ]
@@ -31,7 +30,7 @@ let appRoutes:Routes = [{path:"home", component:HomeComponent},
 	// Startup Component
 	bootstrap: [AppComponent],
 	// Module dependencies
-	imports: [BrowserModule, LoginModule, ShoppingModule, RouterModule.forRoot(appRoutes), FormsModule],
+	imports: [BrowserModule, ShoppingModule, RouterModule.forRoot(appRoutes, {useHash: true}), FormsModule],
 	// Register Services
 	providers: [ProductService, CartService]
 })

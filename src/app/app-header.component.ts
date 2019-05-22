@@ -1,5 +1,6 @@
 // app-header.component.ts
 import { Component } from "@angular/core"
+import { LoginService } from "./shared/services/login.service"
 
 @Component({
 	selector: "app-header",
@@ -7,7 +8,11 @@ import { Component } from "@angular/core"
 	templateUrl: "./header.component.html"
 })
 export class AppHeaderComponent {
-	constructor() {
+	constructor(private loginservice:LoginService) {
 		console.log("Header Component constructor");
+	}
+
+	isAdminLoggedIn() {
+		return this.loginservice.getIsAdminLoggedIn()
 	}
 }
